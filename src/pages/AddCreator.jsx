@@ -1,8 +1,8 @@
 //page to allow the user to add a new content creator
 import React from 'react'
 
-export default function AddCreators() {
+export default function AddCreator() {
   return (
-    <div>AddCreators</div>
+    <div>AddCreator</div>
   )
 }

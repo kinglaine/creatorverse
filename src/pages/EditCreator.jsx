@@ -1,8 +1,8 @@
 //page to allow the user to update a content creator's information
 import React from 'react'
 
-export default function EditCreators() {
+export default function EditCreator() {
   return (
-    <div>EditCreators</div>
+    <div>EditCreator</div>
   )
 }
