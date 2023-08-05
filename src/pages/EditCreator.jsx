@@ -75,19 +75,33 @@ export default function EditCreator() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>Name: </label>
-        <input type='text' name='name' value={formData.name || ''} onChange={handleChange} required></input>
-        <label>Description: </label>
-        <input type= 'text' name='description' value={formData.description || ''} onChange={handleChange} required></input>
-        <label>Url</label>
-        <input type='text' name='url' value={formData.url || ''} onChange={handleChange} required></input>
-        <label>image url</label>
-        <input type='text' name='imageURL' value={formData.imageURL || ''} onChange={handleChange} required></input>
-        <button type='submit'>Submit</button>
+    <div className="bg-slate-800 border-t-2 border-gray-700 flex flex-col p-10 h-screen">
+      <form onSubmit={handleSubmit} className="flex flex-col items-center space-y-20">
+        <label>
+          <p style={{color:'white'}}>Name</p>
+          <input className="w-96 h-14 p-1 rounded"  type='text' name='name' value={formData.name || ''} onChange={handleChange} required></input>
+        </label>
+
+        <label>
+          <p style={{color:'white'}}>image url</p>
+          <input className="w-96 h-14 p-1 rounded" type='text' name='imageURL' value={formData.imageURL || ''} onChange={handleChange} required></input>
+        </label>
+        
+        <label>
+          <p style={{color:'white'}}>Description</p>
+          <input className="w-96 h-14 p-1 rounded" type= 'text' name='description' value={formData.description || ''} onChange={handleChange} required></input>
+        </label>
+        
+        <label>
+          <p style={{color:'white'}}>Youtube</p>
+          <input className="w-96 h-14 p-1 rounded" type='text' name='url' value={formData.url || ''} onChange={handleChange} required></input>
+        </label>
+        
+        <div className="flex justify-center space-x-4">
+          <button type='SUBMIT' style={{color: 'white', borderRadius: '10px'}} className="bg-cyan-600 w-32 h-10">SUBMIT</button>
+          <button style={{color: 'white', borderRadius: '10px'}} className="w-32 h-10 bg-red-600" onClick={handleDeleteCreator}>DELETE</button>
+        </div>
       </form>
-      <button onClick={handleDeleteCreator}>Delete this creator</button>
     </div>
   )
 }
