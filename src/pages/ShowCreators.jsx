@@ -1,8 +1,27 @@
 //page to show all content creators
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import {supabase} from '../client'
+import ContentCreator from '../components/ContentCreator'
 
 export default function ShowCreators() {
+  const [creatorsList, setCreatorslist] = useState([]);
+  const fetchAllContentCreators = async () => { 
+    let { data: creators, error } = await supabase.from('creators').select('*');
+    setCreatorslist(creators);
+    console.log("An error occured", error);
+    console.log("This is the data returned", creators);
+  }
+
+  useEffect(() => {
+    fetchAllContentCreators();
+  }, [])
   return (
-    <div>ShowCreators</div>
+    <div>
+      {
+        creatorsList.map((creator) => {
+          return <ContentCreator key={creator?.id} name={creator?.name} description={creator?.description} URL={creator?.url} image={creator?.image}></ContentCreator>
+        })
+      }
+    </div>
   )
 }
