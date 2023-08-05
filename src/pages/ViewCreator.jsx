@@ -60,8 +60,8 @@ export default function ViewCreator() {
         </div>
       </div>
       <div className="flex justify-center space-x-4">
-        <button style={{color: 'white', borderRadius: '10px'}} className="bg-cyan-600 w-64 h-20" onClick={handleNavigateToEdit}>EDIT</button>
-        <button style={{color: 'white', borderRadius: '10px'}} className="w-64 h-20 bg-red-600" onClick={handleDeleteCreator}>DELETE</button>
+        <button style={{color: 'white', borderRadius: '10px'}} className="bg-cyan-600 w-32 h-10" onClick={handleNavigateToEdit}>EDIT</button>
+        <button style={{color: 'white', borderRadius: '10px'}} className="w-32 h-10 bg-red-600" onClick={handleDeleteCreator}>DELETE</button>
       </div>
     </div>
   )
