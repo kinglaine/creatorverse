@@ -1,12 +1,18 @@
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 
-export default function contentCreator({name, URL, description, image}) {
+export default function contentCreator({name, URL, description, image, id}) {
+  const navigate = useNavigate();
+  const handleNavigateToSingleView = () => {
+    navigate(`/view/${id}`);
+  };
   return (
     <div>
         <p>This is the creator name: {name}</p>
         <p>This is URL: {URL}</p>
         <p>This is description: {description}</p>
         <img src={image} alt='This is creator image'></img>
+        <button onClick={handleNavigateToSingleView}>go to creator button</button>
     </div>
   )
 }

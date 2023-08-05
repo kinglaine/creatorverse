@@ -17,7 +17,7 @@ function App() {
           <Link to='/edit'>Go To Edit Creators</Link>
         </li>
         <li>
-          <Link to='/view'>Go To View Single Creator</Link>
+          <Link to='/view:creatorId'>Go To View Single Creator</Link>
         </li>
         <li>
           <Link to='/add'>Go Add A new Creator</Link>
@@ -26,7 +26,7 @@ function App() {
       <Routes>
         <Route path='/' element={<ShowCreators></ShowCreators>}></Route>
         <Route path='/edit' element={<EditCreator></EditCreator>}></Route>
-        <Route path='/view' element={<ViewCreator></ViewCreator>}></Route>
+        <Route path='/view/:creatorId' element={<ViewCreator></ViewCreator>}></Route>
         <Route path='/add' element={<AddCreator></AddCreator>}></Route>
       </Routes>
     </Router>

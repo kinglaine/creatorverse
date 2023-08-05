@@ -20,7 +20,7 @@ export default function ShowCreators() {
       {
         creatorsList.length > 0? 
         creatorsList.map((creator) => {
-          return <ContentCreator key={creator?.id} name={creator?.name} description={creator?.description} URL={creator?.url} image={creator?.image}></ContentCreator>
+          return <ContentCreator key={creator?.id} id={creator?.id} name={creator?.name} description={creator?.description} URL={creator?.url} image={creator?.image}></ContentCreator>
         }):
         <p>There are no creators Yet!</p>
       }
