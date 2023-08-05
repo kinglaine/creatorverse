@@ -16,13 +16,13 @@ export default function ShowCreators() {
     fetchAllContentCreators();
   }, [])
   return (
-    <div>
+    <div className="bg-slate-800 border-t-2 border-gray-700 flex justify-center flex-row flex-wrap p-10 h-screen">
       {
         creatorsList.length > 0? 
         creatorsList.map((creator) => {
-          return <ContentCreator key={creator?.id} id={creator?.id} name={creator?.name} description={creator?.description} URL={creator?.url} image={creator?.image}></ContentCreator>
+          return <ContentCreator key={creator?.id} id={creator?.id} name={creator?.name} description={creator?.description} URL={creator?.url} image={creator?.imageURL}></ContentCreator>
         }):
-        <p>There are no creators Yet!</p>
+        <p style={{color: 'white'}}>There are no creators Yet!</p>
       }
     </div>
   )
