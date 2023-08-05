@@ -1,12 +1,13 @@
 //page to allow the user to update a content creator's information
 import React, {useEffect, useState} from 'react'
 import {supabase} from '../client'
+import { useNavigate } from "react-router-dom";
 
 export default function EditCreator() {
   const url = window.location.href; // Get the current URL
   const segments = url.split('/'); // Split the URL by '/'
   const creatorId = segments[segments.length - 1];
-
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: null,
     description: null,
@@ -36,6 +37,23 @@ export default function EditCreator() {
       console.log("Update was a success", data);
     }
 
+  }
+
+  const deleteMatchingRowInCreatorTable = async () => {
+    const { error } = await supabase
+    .from('creators')
+    .delete()
+    .eq('id', creatorId);
+    if(error) {
+      console.log(error);
+    }else{
+      navigate('/');
+      console.log("Deletion was a success");
+    }
+  }
+
+  const handleDeleteCreator = () => {
+    deleteMatchingRowInCreatorTable();
   }
 
   const handleChange = (e) => {
@@ -69,6 +87,7 @@ export default function EditCreator() {
         <input type='text' name='imageUrl' value={formData.imageUrl || ''} onChange={handleChange} required></input>
         <button type='submit'>Submit</button>
       </form>
+      <button onClick={handleDeleteCreator}>Delete this creator</button>
     </div>
   )
 }
