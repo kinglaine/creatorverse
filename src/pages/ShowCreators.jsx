@@ -11,16 +11,18 @@ export default function ShowCreators() {
     console.log("An error occured", error);
     console.log("This is the data returned", creators);
   }
-
+  
   useEffect(() => {
     fetchAllContentCreators();
   }, [])
   return (
     <div>
       {
+        creatorsList.length > 0? 
         creatorsList.map((creator) => {
           return <ContentCreator key={creator?.id} name={creator?.name} description={creator?.description} URL={creator?.url} image={creator?.image}></ContentCreator>
-        })
+        }):
+        <p>There are no creators Yet!</p>
       }
     </div>
   )
