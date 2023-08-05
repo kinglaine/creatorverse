@@ -42,17 +42,33 @@ export default function AddCreator() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>Name: </label>
-        <input type='text' name='name' value={formData.name} onChange={handleChange} required></input>
-        <label>Description: </label>
-        <input type= 'text' name='description' value={formData.description} onChange={handleChange} ></input>
-        <label>Url</label>
-        <input type='text' name='url' value={formData.url} onChange={handleChange} ></input>
-        <label>image url</label>
-        <input type='text' name='imageUrl' value={formData.imageUrl} onChange={handleChange} ></input>
-        <button type='submit'>Submit</button>
+    <div className="bg-slate-800 border-t-2 border-gray-700 flex flex-col p-10 h-screen">
+      <form onSubmit={handleSubmit} className="flex flex-col items-center">
+        <div className="flex flex-col items-center space-y-10">
+          <label>
+            <p style={{color:'white'}}>Name</p>
+            <p></p>
+            <input className="w-96 h-14 p-1 rounded"  type='text' name='name' value={formData.name || ''} onChange={handleChange} required></input>
+          </label>
+
+          <label>
+            <p style={{color:'white'}}>Image</p>
+            <p style={{color:'white'}} className="break-words w-96 mb-1"><i>Provide a link to an image of your creator. Be sure to include the http://</i></p>
+            <input className="w-96 h-14 p-1 rounded" type='text' name='imageURL' value={formData.imageUrl || ''} onChange={handleChange} required></input>
+          </label>
+          
+          <label>
+            <p style={{color:'white'}}>Description</p>
+            <p style={{color:'white'}} className="break-words w-96 mb-1"><i>Provide a description of the creator. Who are they? What makes them interesting?</i></p>
+            <input className="w-96 h-14 p-1 rounded" type= 'text' name='description' value={formData.description || ''} onChange={handleChange} required></input>
+          </label>
+          
+          <label>
+            <p style={{color:'white'}}>Youtube</p>
+            <input className="w-96 h-14 p-1 rounded" type='text' name='url' value={formData.url || ''} onChange={handleChange} required></input>
+          </label>
+        </div>
+          <button type='submit' style={{color: 'white', borderRadius: '10px'}} className="bg-cyan-600 w-96 h-10 mt-2">SUBMIT</button>
       </form>
     </div>
   )
