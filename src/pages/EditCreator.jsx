@@ -12,7 +12,7 @@ export default function EditCreator() {
     name: null,
     description: null,
     url: null,
-    imageUrl: null
+    imageURL: null
   });
   const fecthCreatorInfo = async () => {
     if(creatorId){
@@ -28,7 +28,7 @@ export default function EditCreator() {
   const editMatchingRowInCreatorTable = async () => {
     const { data, error } = await supabase
     .from('creators')
-    .update({name: formData.name, url: formData.url, description: formData.description, imageURL: formData.imageUrl})
+    .update({name: formData.name, url: formData.url, description: formData.description, imageURL: formData.imageURL})
     .eq('id', creatorId)
     .select()
     if(error){
@@ -71,7 +71,7 @@ export default function EditCreator() {
     console.log('name:', formData.name);
     console.log('url:', formData.url);
     console.log('description:', formData.description);
-    console.log('imageUrl:', formData.imageUrl);
+    console.log('imageURL:', formData.imageURL);
   };
 
   return (
@@ -84,7 +84,7 @@ export default function EditCreator() {
         <label>Url</label>
         <input type='text' name='url' value={formData.url || ''} onChange={handleChange} required></input>
         <label>image url</label>
-        <input type='text' name='imageUrl' value={formData.imageUrl || ''} onChange={handleChange} required></input>
+        <input type='text' name='imageURL' value={formData.imageURL || ''} onChange={handleChange} required></input>
         <button type='submit'>Submit</button>
       </form>
       <button onClick={handleDeleteCreator}>Delete this creator</button>
