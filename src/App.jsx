@@ -25,7 +25,7 @@ function App() {
       </ul>
       <Routes>
         <Route path='/' element={<ShowCreators></ShowCreators>}></Route>
-        <Route path='/edit' element={<EditCreator></EditCreator>}></Route>
+        <Route path='/edit/:creatorId' element={<EditCreator></EditCreator>}></Route>
         <Route path='/view/:creatorId' element={<ViewCreator></ViewCreator>}></Route>
         <Route path='/add' element={<AddCreator></AddCreator>}></Route>
       </Routes>
