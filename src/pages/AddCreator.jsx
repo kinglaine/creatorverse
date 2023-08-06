@@ -38,6 +38,12 @@ export default function AddCreator() {
   const handleSubmit = (e) => {
     e.preventDefault();
     insertRowInCreatorTable();
+    setFormData({name: '',
+    description: '',
+    youtubeUrl: '',
+    twitterUrl: '',
+    instagramUrl: '',
+    imageURL: ''});
     console.log('name:', formData.name);
     console.log('url:', formData.url);
     console.log('description:', formData.description);
@@ -57,7 +63,7 @@ export default function AddCreator() {
           <label>
             <p style={{color:'white', fontSize:'20px'}}>Image</p>
             <p style={{color:'white'}} className="break-words w-96 mb-1"><i>Provide a link to an image of your creator. Be sure to include the http://</i></p>
-            <input className="w-96 h-14 p-1 rounded" type='text' name='imageURL' value={formData.imageUrl || ''} onChange={handleChange} required></input>
+            <input className="w-96 h-14 p-1 rounded" type='text' name='imageURL' value={formData.imageURL || ''} onChange={handleChange} required></input>
           </label>
           
           <label>
@@ -70,15 +76,15 @@ export default function AddCreator() {
             <h1 style={{color:'#00a3c4'}}>SOCIAL MEDIA LINKS</h1>
             <p style={{color:'white'}} className="w-96"><i>Provide at least one of the creator's social media links.</i></p>
             <p style={{color:'white', fontSize:'20px'}}>Youtube</p>
-            <input className="w-96 h-14 p-1 rounded" type='text' name='youtubeUrl' value={formData.youtubeUrl || ''} onChange={handleChange} required></input>
+            <input className="w-96 h-14 p-1 rounded" type='text' name='youtubeUrl' value={formData.youtubeUrl || ''} onChange={handleChange}></input>
           </label>
           <label>
             <p style={{color:'white', fontSize:'20px'}}>Twitter</p>
-            <input className="w-96 h-14 p-1 rounded" type='text' name='twitterUrl' value={formData.twitterUrl || ''} onChange={handleChange} required></input>
+            <input className="w-96 h-14 p-1 rounded" type='text' name='twitterUrl' value={formData.twitterUrl || ''} onChange={handleChange}></input>
           </label>
           <label>
             <p style={{color:'white', fontSize:'20px'}}>Instagram</p>
-            <input className="w-96 h-14 p-1 rounded" type='text' name='instagramUrl' value={formData.instagramUrl || ''} onChange={handleChange} required></input>
+            <input className="w-96 h-14 p-1 rounded" type='text' name='instagramUrl' value={formData.instagramUrl || ''} onChange={handleChange}></input>
           </label>
         </div>
           <button type='submit' style={{color: 'white', borderRadius: '10px'}} className="bg-cyan-600 w-96 h-10 mt-2">SUBMIT</button>
