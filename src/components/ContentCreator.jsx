@@ -14,7 +14,7 @@ export default function contentCreator({name, URL, description, image, id}) {
   };
   
   return (
-    <div className="bg-black w-64 p-3 ml-3 mt-3">
+    <div className="bg-black w-64 p-3 ml-3 mt-3 h-3/4">
         <img src={image} alt='This is creator image' style={{color:'white'}} height="200px" width="300px"></img>
         <p style={{color: '#00a3c4'}}>{name}</p>
         <div className="flex justify-between">
