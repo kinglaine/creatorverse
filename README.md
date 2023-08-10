@@ -35,7 +35,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-👉🏿<img src='https://github.com/kinglaine/creatorverse/assets/72886722/624ee8d3-7fbe-4b5a-b231-75c39ac0b1db' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+👉🏿<img src='https://github.com/kinglaine/creatorverse/assets/72886722/af2c8fa4-731e-4451-b653-4973d9c19096' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...  👉🏿 https://ezgif.com/video-to-gif and QuickTime Player screen Recorder
